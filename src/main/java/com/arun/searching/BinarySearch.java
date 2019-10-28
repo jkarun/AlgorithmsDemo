@@ -32,7 +32,7 @@ public class BinarySearch {
 		String findStr = "ide";
 		System.out.println("\n\nBinary Search Recursive \ninput array: " + Arrays.toString(array2)
 				+ ", Search String:  " + findStr);
-		int result3 = search.binarySearchRecursive(array1, find, 0, array1.length - 1);
+		int result3 = search.binarySearchString(array2, findStr);
 
 		if (result3 >= 0)
 			System.out.println("element found at index: " + result2);
@@ -48,7 +48,7 @@ public class BinarySearch {
 		int guess = 0;
 
 		while (low <= high) {
-			mid = (low + high) / 2;
+			mid = low + (high - low) / 2;
 			guess = array[mid];
 			System.out.println(
 					"Steps: " + Arrays.toString(Arrays.copyOfRange(array, low, high)) + ", mid element: " + guess);
@@ -79,7 +79,7 @@ public class BinarySearch {
 	private int binarySearchString(String[] array, String x) {
 		int low = 0, high = array.length - 1, mid = 0;
 		while (low <= high) {
-			mid = (low + high) / 2;
+			mid = low + (high - low) / 2;
 
 			int guess = x.compareTo(array[mid]);
 
